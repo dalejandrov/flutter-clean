@@ -21,7 +21,8 @@ class TemplateLocalDataSourceImpl implements TemplateLocalDataSource {
     final jsonString = sharedPreferences.getString(cachedTemplate);
 
     if (jsonString != null) {
-      return Future.value(TemplateModel.fromJson(json: json.decode(jsonString)));
+      return Future.value(
+          TemplateModel.fromJson(json: json.decode(jsonString)));
     } else {
       throw CacheException();
     }
